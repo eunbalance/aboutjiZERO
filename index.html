@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0E0E10}
+body{margin:0;background:#0E0E10;overflow:hidden}
 a{color:#FFFFFF;text-decoration:none}a:hover{color:#FFFFFF}
 .draw{stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 6px rgba(255,255,255,.55)) drop-shadow(0 0 22px rgba(255,255,255,.22));animation:draw 2.6s cubic-bezier(.65,0,.35,1) .2s forwards,glow 2.4s ease-in-out 3s infinite}
 @keyframes draw{to{stroke-dashoffset:0}}
@@ -23,15 +23,14 @@ a{color:#FFFFFF;text-decoration:none}a:hover{color:#FFFFFF}
 </style>
 <style>
 *{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+body{margin:0;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none !important}
-.app{width:100%;max-width:414px;height:100vh;height:100dvh;max-height:896px;margin:0 auto;position:relative}
-@media (min-width:500px){.app{border-radius:40px;box-shadow:0 30px 80px rgba(0,0,0,.18)}}
+.app{width:100%;max-width:414px;min-height:100vh;min-height:100dvh;margin:0 auto;position:relative}
+.app.splash{position:fixed;left:50%;top:0;width:414px;height:896px;min-height:0;max-width:none;margin:0;transform-origin:top center;transform:translateX(-50%)}
 </style>
 </head>
 <body>
-<a href="home.html" aria-label="시작하기" class="app" style="box-sizing: border-box; background: #0E0E10; font-family: 'Noto Serif KR', serif; color: #FFFFFF; position: relative; display: block; overflow: hidden">
+<a href="home.html" aria-label="시작하기" class="app splash" id="app" style="box-sizing: border-box; background: #0E0E10; font-family: 'Noto Serif KR', serif; color: #FFFFFF; position: relative; display: block; overflow: hidden">
 
   <div aria-hidden="true" style="position: absolute; left: 0; top: 60px; width: 414px; height: 560px">
     <svg width="414" height="560" viewBox="0 0 414 560" fill="none" style="position: absolute; inset: 0; overflow: visible">
@@ -60,5 +59,14 @@ body{margin:0;display:flex;align-items:center;justify-content:center;-webkit-tap
     <span class="late" style="font-size: 13px; font-weight: 500; letter-spacing: 0.3em; color: #FFFFFF">김지영백과사전</span>
   </div>
 </a>
+<script>
+var app = document.getElementById('app');
+function fit() {
+  var s = Math.min(1, window.innerHeight / 896, window.innerWidth / 414);
+  app.style.transform = 'translateX(-50%) scale(' + s + ')';
+}
+window.addEventListener('resize', fit);
+fit();
+</script>
 </body>
 </html>

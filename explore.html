@@ -21,15 +21,14 @@ button{font-family:inherit;cursor:pointer}
 </style>
 <style>
 *{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+body{margin:0;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none !important}
-.app{width:100%;max-width:414px;height:100vh;height:100dvh;max-height:896px;margin:0 auto;position:relative}
-@media (min-width:500px){.app{border-radius:40px;box-shadow:0 30px 80px rgba(0,0,0,.18)}}
+.app{width:100%;max-width:414px;min-height:100vh;min-height:100dvh;margin:0 auto;position:relative}
+.app.splash{position:fixed;left:50%;top:0;width:414px;height:896px;min-height:0;max-width:none;margin:0;transform-origin:top center;transform:translateX(-50%)}
 </style>
 </head>
 <body>
-<div class="app" style="box-sizing: border-box; background: #FAFAFC; font-family: 'Noto Serif KR', serif; color: #17171C; padding: 54px 20px 28px; display: flex; flex-direction: column; overflow: hidden">
+<div class="app" style="box-sizing: border-box; background: #FAFAFC; font-family: 'Noto Serif KR', serif; color: #17171C; padding: 54px 20px 28px; display: flex; flex-direction: column">
 
   <div style="display: flex; align-items: center; justify-content: space-between">
     <a href="home.html" aria-label="홈으로" style="width: 44px; height: 44px; margin-left: -10px; display: flex; align-items: center; justify-content: center">
