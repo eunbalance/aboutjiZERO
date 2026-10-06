@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>김지영백과사전 스플래시</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0E10}
+a{color:#FFFFFF;text-decoration:none}a:hover{color:#FFFFFF}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 6px rgba(255,255,255,.55)) drop-shadow(0 0 22px rgba(255,255,255,.22));animation:draw 2.6s cubic-bezier(.65,0,.35,1) .2s forwards,glow 2.4s ease-in-out 3s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 6px rgba(255,255,255,.55)) drop-shadow(0 0 22px rgba(255,255,255,.22))}50%{filter:drop-shadow(0 0 12px rgba(255,255,255,.9)) drop-shadow(0 0 40px rgba(255,255,255,.45))}}
+.head{offset-path:path('M -30 470 C 60 470, 150 450, 207 400 C 150 350, 77 300, 77 230 C 77 170, 120 135, 160 135 C 190 135, 207 160, 207 190 C 207 160, 224 135, 254 135 C 294 135, 337 170, 337 230 C 337 300, 264 350, 207 400 C 264 450, 354 470, 450 470');offset-distance:0%;offset-rotate:0deg;opacity:0;animation:travel 2.6s cubic-bezier(.65,0,.35,1) .2s forwards}
+@keyframes travel{0%{offset-distance:0%;opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+.word{display:inline-block;opacity:0;transform:translateY(12px);filter:blur(4px);animation:rise .7s ease forwards}
+@keyframes rise{to{opacity:1;transform:none;filter:blur(0)}}
+.late{opacity:0;animation:fade .8s ease 4.3s forwards}
+@keyframes fade{to{opacity:1}}
+.pulse{animation:fade .8s ease 4.3s forwards,blink 1.6s ease-in-out 5.1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.45}}
+</style>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none !important}
+.app{width:100%;max-width:414px;height:100vh;height:100dvh;max-height:896px;margin:0 auto;position:relative}
+@media (min-width:500px){.app{border-radius:40px;box-shadow:0 30px 80px rgba(0,0,0,.18)}}
+</style>
+</head>
+<body>
+<a href="home.html" aria-label="시작하기" class="app" style="box-sizing: border-box; background: #0E0E10; font-family: 'Noto Serif KR', serif; color: #FFFFFF; position: relative; display: block; overflow: hidden">
+
+  <div aria-hidden="true" style="position: absolute; left: 0; top: 60px; width: 414px; height: 560px">
+    <svg width="414" height="560" viewBox="0 0 414 560" fill="none" style="position: absolute; inset: 0; overflow: visible">
+      <defs>
+        <linearGradient id="kjyLine" x1="0" y1="0" x2="414" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#1C1C20"></stop>
+          <stop offset="0.25" stop-color="#7A7A84"></stop>
+          <stop offset="0.5" stop-color="#FFFFFF"></stop>
+          <stop offset="0.75" stop-color="#7A7A84"></stop>
+          <stop offset="1" stop-color="#1C1C20"></stop>
+        </linearGradient>
+      </defs>
+      <path class="draw" pathLength="1" d="M -30 470 C 60 470, 150 450, 207 400 C 150 350, 77 300, 77 230 C 77 170, 120 135, 160 135 C 190 135, 207 160, 207 190 C 207 160, 224 135, 254 135 C 294 135, 337 170, 337 230 C 337 300, 264 350, 207 400 C 264 450, 354 470, 450 470" stroke="url(#kjyLine)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <div class="head" style="position: absolute; left: 0; top: 0; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 24px 8px rgba(255,255,255,0.35)"></div>
+  </div>
+
+  <div style="position: absolute; left: 32px; right: 32px; top: 560px; display: flex; flex-direction: column; gap: 6px; font-size: 28px; line-height: 1.45; font-weight: 300; letter-spacing: -0.01em">
+    <div><span class="word" style="animation-delay: 1.5s">충전기를</span> <span class="word" style="animation-delay: 1.9s">빌려준</span></div>
+    <div><span class="word" style="animation-delay: 2.4s">지영이에게</span></div>
+    <div><span class="word" style="animation-delay: 2.9s">감사를</span> <span class="word" style="animation-delay: 3.3s; color: #9A9AA4">표하며,,</span></div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 44px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+    <span class="pulse" style="opacity: 0; font-size: 13px; color: #A6A6B0">화면을 눌러 시작하기</span>
+    <span class="late" style="font-size: 13px; font-weight: 500; letter-spacing: 0.3em; color: #FFFFFF">김지영백과사전</span>
+  </div>
+</a>
+</body>
+</html>
